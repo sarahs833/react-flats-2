@@ -54,13 +54,20 @@ class App extends Component {
             lat: 48.827855,
             lng: 2.350774
           }
-        ]
+        ],
+    selectedFlat: this.state.flats[0]
   }
+
+  handleClick = (flat) => {
+    const selectedFlat = [...this.state.selectedFlat];
+    selectedFlat = {...flat};
+    this.setState({selectedFlat});
+}
 
   render() {
     return (
       <div>
-        <FlatList flats={this.state.flats} />
+        <FlatList flats={this.state.flats} handleClick={this.handleClick} />
       </div>
     )
   }
