@@ -1,4 +1,4 @@
-import React , { Component } from "react"
+import React , { Component } from "react";
 
 import FlatList from './flatlist';
 
@@ -55,19 +55,18 @@ class App extends Component {
             lng: 2.350774
           }
         ],
-    selectedFlat: this.state.flats[0]
+    selectedFlat: {}
   }
 
   handleClick = (flat) => {
-    const selectedFlat = [...this.state.selectedFlat];
-    selectedFlat = {...flat};
-    this.setState({selectedFlat});
+    const selectedFlat = this.state.selectedFlat
+    this.setState({ selectedFlat:flat });
 }
 
   render() {
     return (
       <div>
-        <FlatList flats={this.state.flats} handleClick={this.handleClick} />
+        <FlatList selectedFlat={this.state.selectedFlat} flats={this.state.flats} handleClick={this.handleClick} />
       </div>
     )
   }
