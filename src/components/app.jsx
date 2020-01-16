@@ -1,5 +1,6 @@
 import React , { Component } from "react";
 
+import Map from './map';
 import FlatList from './flatlist';
 
 
@@ -59,7 +60,7 @@ class App extends Component {
   }
 
   handleClick = (flat) => {
-    const selectedFlat = this.state.selectedFlat
+    const selectedFlat = this.state.selectedFlat;
     this.setState({ selectedFlat:flat });
 }
 
@@ -67,6 +68,7 @@ class App extends Component {
     return (
       <div>
         <FlatList selectedFlat={this.state.selectedFlat} flats={this.state.flats} handleClick={this.handleClick} />
+        <Map selectedFlat={this.state.selectedFlat} />
       </div>
     )
   }
